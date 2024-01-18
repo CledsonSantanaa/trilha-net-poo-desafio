@@ -2,25 +2,30 @@ namespace DesafioPOO.Models
 {
     public abstract class Smartphone
     {
-        public string Numero { get; set; }
         // TODO: Implementar as propriedades faltantes de acordo com o diagrama
-
-        public Smartphone(string numero)
+       // Aqui declaro as propriedades dos tipos "string e int" Numero, Modelo, Imei e Memoria.
+        public string Numero { get; set; }
+        public string Modelo { get; set;}
+        public int Imei { get; set; }
+        public int Memoria { get; set; }
+        // Aqui crio o metódo construtor da classe "Smartphone" que recebe os parametros das propriedades. 
+        public Smartphone(string numero, string modelo, int imei, int memoria)
         {
-            Numero = numero;
             // TODO: Passar os parâmetros do construtor para as propriedades
+            Numero = numero;
+            Modelo = modelo;
+            Imei = imei;
+            Memoria = memoria;
         }
 
-        public void Ligar()
-        {
-            Console.WriteLine("Ligando...");
-        }
+        //Aqui declaro os metódos abstratos Ligar, ReceberLigacao e InstalarAplicativo.
+        //Os metódos Ligar e ReceberLigacao não recebem parâmetros e será implementados nas classes.
+        //Já o metódo InstalarAplicativo recebe o parâmetro nome que será o nome do aplicativo e este 
+        //por sua vez também deve ser implemetado nas classes.
+        public abstract void Ligar();
 
-        public void ReceberLigacao()
-        {
-            Console.WriteLine("Recebendo ligação...");
-        }
+        public abstract void ReceberLigacao();
 
-        public abstract void InstalarAplicativo(string nomeApp);
+        public abstract void InstalarAplicativo(string nome);
     }
 }
